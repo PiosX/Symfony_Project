@@ -12,13 +12,15 @@ class MainController extends AbstractController
     #[Route('/', name: 'home')]
     public function index(): Response
     {
-        return new Response(content:'<h1>Welcome :)</h1>');
+        return $this->render(view:'home/index.html.twig');
     }
 
     #[Route('/custom/{name?}', name: 'custom')]
     public function custom(Request $request)
     {
-        dump($request);
-        return new Response(content:'<h1>Welcome !</h1>');
+        $name = $request->get(key:'name');
+        return $this->render('home/custom.html.twig', [
+            'name' => $name
+        ]);
     }
 }
