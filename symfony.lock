@@ -175,6 +175,9 @@
             "./.env"
         ]
     },
+    "symfony/form": {
+        "version": "v5.3.4"
+    },
     "symfony/framework-bundle": {
         "version": "5.3",
         "recipe": {
@@ -212,11 +215,17 @@
             "ref": "fadbfe33303a76e25cb63401050439aa9b1a9c7f"
         }
     },
+    "symfony/options-resolver": {
+        "version": "v5.3.4"
+    },
     "symfony/orm-pack": {
         "version": "v2.1.0"
     },
     "symfony/polyfill-intl-grapheme": {
         "version": "v1.23.1"
+    },
+    "symfony/polyfill-intl-icu": {
+        "version": "v1.23.0"
     },
     "symfony/polyfill-intl-normalizer": {
         "version": "v1.23.0"
@@ -234,6 +243,12 @@
         "version": "v1.23.0"
     },
     "symfony/process": {
+        "version": "v5.3.4"
+    },
+    "symfony/property-access": {
+        "version": "v5.3.4"
+    },
+    "symfony/property-info": {
         "version": "v5.3.4"
     },
     "symfony/proxy-manager-bridge": {
@@ -286,11 +301,38 @@
     "symfony/twig-pack": {
         "version": "v1.0.1"
     },
+    "symfony/validator": {
+        "version": "4.3",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "4.3",
+            "ref": "3eb8df139ec05414489d55b97603c5f6ca0c44cb"
+        },
+        "files": [
+            "./config/packages/test/validator.yaml",
+            "./config/packages/validator.yaml"
+        ]
+    },
     "symfony/var-dumper": {
         "version": "v5.3.6"
     },
     "symfony/var-exporter": {
         "version": "v5.3.4"
+    },
+    "symfony/web-profiler-bundle": {
+        "version": "3.3",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "3.3",
+            "ref": "6bdfa1a95f6b2e677ab985cd1af2eae35d62e0f6"
+        },
+        "files": [
+            "./config/packages/dev/web_profiler.yaml",
+            "./config/packages/test/web_profiler.yaml",
+            "./config/routes/dev/web_profiler.yaml"
+        ]
     },
     "symfony/web-server-bundle": {
         "version": "3.3",
