@@ -39,9 +39,21 @@ class PostController extends AbstractController
             //entity manager
 
             $em = $this->getDoctrine()->getManager();
+            /** @var UploadedFile $file */
+            $file = $request->files->get('post')['attachment'];
+            if($file)
+            {
+                $filename = md5(uniqid()).'.'.$file->guessClientExtension();
 
-            $em->persist($post);
-            $em->flush();
+                $file->move(
+                    $this->getParameter('uploads_dir'),
+                    $filename
+                );
+
+                $post->setImage($filename);
+                $em->persist($post);
+                $em->flush();
+            }
 
             return $this->redirect($this->generateUrl('post.index'));
         }
@@ -68,7 +80,7 @@ class PostController extends AbstractController
     public function remove(Post $post)
     {
         $em = $this->getDoctrine()->getManager();
-
+        
         $em->remove($post);
         $em->flush();
 
